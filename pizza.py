@@ -1,5 +1,3 @@
-
-
 class Pizza:
     """
     Базовый класс пицц.
@@ -9,7 +7,12 @@ class Pizza:
         if size not in ["L", "XL"]:
             raise TypeError("Wrong pizza size - must be L or XL only.")
         self.size = size
-        self._ingredients = {"tomato sauce": 100, "salt": 20, "mozzarella": 100, "dough": 300}
+        self._ingredients = {
+            "tomato sauce": 100,
+            "salt": 20,
+            "mozzarella": 100,
+            "dough": 300,
+        }
         if size == "XL":
             for key in self.__dict__:
                 self.__dict__[key] = int(2 * self.__dict__[key])
@@ -63,3 +66,7 @@ class Hawaiian(Pizza):
 
     def __repr__(self):
         return f"{super().__repr__()} 🍍"
+
+
+if __name__ == "main":
+    print("sgfg")

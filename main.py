@@ -1,8 +1,14 @@
 import click
-from pizza import Margherita, Pepperoni, Hawaiian
+from pizza import Margherita, Pepperoni, Hawaiian, Pizza
 from stuff import bake, pickup, delivery
 
-MENU = {"margherita": Margherita(), "pepperoni": Pepperoni(), "hawaiian": Hawaiian()}
+MENU = {
+    "margherita": Margherita(),
+    "pepperoni": Pepperoni(),
+    "hawaiian": Hawaiian(),
+    "pizza": Pizza(),
+}
+
 
 @click.group()
 def cli():
@@ -10,8 +16,8 @@ def cli():
 
 
 @cli.command()
-@click.option('--delivery', 'delivery_flag', default=False, is_flag=True)
-@click.argument('pizza', nargs=1)
+@click.option("--delivery", "delivery_flag", default=False, is_flag=True)
+@click.argument("pizza", nargs=1)
 def order(pizza: str, delivery_flag: bool):
     """Готовит и доставляет пиццу"""
     pizza = pizza.lower()
@@ -28,11 +34,9 @@ def order(pizza: str, delivery_flag: bool):
 @cli.command()
 def menu():
     """Выводит меню"""
-    print("sdf")
-    for pizza in MENU.values():
-        print(f'- {pizza}: {", ".join(pizza.dict())}')
+    for p in MENU.values():
+        click.echo(f'{p}: {", ".join(f"{k} - {v} gram" for k, v in p.dict().items())}')
 
 
-if __name__ == 'main':
+if __name__ == "__main__":
     cli()
-
