@@ -68,7 +68,3 @@ class Hawaiian(Pizza):
 
     def __repr__(self):
         return f"{super().__repr__()} 🍍"
-
-
-if __name__ == "main":
-    print("sgfg")
