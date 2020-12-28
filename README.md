@@ -9,3 +9,8 @@ python main.py menu
 ```
 python main.py order pizza --delivery
 ```
+
+Тестирование:
+```
+python3 -m pytest tests.py
+```
