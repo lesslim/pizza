@@ -2,10 +2,10 @@
 
 Чтобы посмотреть меню: 
 ```
-python pizzeria.py menu
+python main.py menu
 ```
 
 Заказ пиццы с доставкой:
 ```
-python pizzeria.py order pizza --delivery
+python main.py order pizza --delivery
 ```
