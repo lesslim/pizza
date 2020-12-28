@@ -14,8 +14,10 @@ class Pizza:
             "dough": 300,
         }
         if size == "XL":
-            for key in self.__dict__['_ingredients']:
-                self.__dict__['_ingredients'][key] = int(2 * self.__dict__['_ingredients'][key])
+            for key in self.__dict__["_ingredients"]:
+                self.__dict__["_ingredients"][key] = int(
+                    2 * self.__dict__["_ingredients"][key]
+                )
 
     def dict(self) -> dict:
         return self._ingredients
